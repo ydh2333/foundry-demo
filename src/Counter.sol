@@ -5,10 +5,19 @@ contract Counter {
     uint256 public number;
 
     function setNumber(uint256 newNumber) public {
+        require(newNumber > 0, "Counter: number must be greater than 0");
         number = newNumber;
     }
 
     function increment() public {
         number++;
+    }
+
+    function decrement() public {
+        number--;
+    }
+
+    function getNumber() public view returns (uint256) {
+        return number;
     }
 }
