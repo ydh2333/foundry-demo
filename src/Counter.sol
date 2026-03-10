@@ -17,6 +17,10 @@ contract Counter {
         number--;
     }
 
+    function reset() public {
+        number = 0;
+    }
+
     function getNumber() public view returns (uint256) {
         return number;
     }
